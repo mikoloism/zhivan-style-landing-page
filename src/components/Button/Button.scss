@@ -1,0 +1,84 @@
+@import './../../../node_modules/@yek/sass/dist/index.scss';
+
+$addToCart_size: 50px;
+
+.addToCart {
+	@include relative;
+	@include center(g-row);
+	@include clear-button;
+	@include size($tog: $addToCart_size);
+	background: transparent;
+	color: color(primary);
+	border: 2px solid #{color(primary)};
+	overflow: hidden;
+
+	&__icon {
+		color: inherit;
+		@include size($tog: 18px);
+	}
+
+	& * {
+		z-index: inherit;
+	}
+
+	&::before {
+		content: '';
+		display: block;
+		@include absolute(100%, 0, 0, 0);
+		@include size($tog: 100%);
+		background: color(primary);
+		z-index: -1;
+
+		// TOGGLE : /* to make it easy motion */ transform: scale(.8);
+	}
+
+	// transition //
+
+	&,
+	&::before {
+		transition: 0.4s cubic-bezier(0.5, 1.75, 0.75, 1.25) all;
+	}
+
+	&__icon {
+		transition: 0.4s 0.4s cubic-bezier(0.5, 1.75, 0.75, 1.25) stroke;
+	}
+
+	&:hover {
+		cursor: pointer;
+		&::before {
+			top: 0;
+			background: color(primary);
+		}
+	}
+
+	&:hover &__icon {
+		transform: scale(1.1);
+		stroke: color(secondary);
+	}
+}
+
+.addToCart {
+	&--rounded {
+		&,
+		&::before {
+			border-top: {
+				right-radius: $addToCart_size;
+				left-radius: $addToCart_size;
+			}
+		}
+
+		&::before {
+			top: 0;
+			transform: scale(0);
+		}
+
+		&:hover::before {
+			// TOGGLE : /* to make easy motion */ transform: scale(.9);
+			transform: scale(1);
+		}
+	}
+
+	&--rounded:hover &__icon {
+		transition: 0.4s cubic-bezier(0.5, 1.75, 0.75, 1.25) all;
+	}
+}
