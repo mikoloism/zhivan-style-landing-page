@@ -10,7 +10,12 @@ export default {
 
 const Template = (args) => <Button {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
-	children: 'Hi',
+export const UnRounded = Template.bind({});
+UnRounded.args = {
+	rounded: false,
+};
+
+export const Rounded = Template.bind({});
+Rounded.args = {
+	rounded: true,
 };
