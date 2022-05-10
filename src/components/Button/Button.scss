@@ -2,6 +2,7 @@
 
 $btnSize: 50px;
 
+.navigate,
 .cart,
 .buy {
 	@include clear-button;
@@ -79,5 +80,105 @@ $btnSize: 50px;
 
 	&:hover &__icon {
 		transition: 0.4s cubic-bezier(0.5, 1.75, 0.75, 1.25) all;
+	}
+}
+
+$navWidth: 72px;
+$navHeight: 60px;
+
+.navigate {
+	&--right {
+		border-top-right-radius: $navWidth;
+		border-bottom-right-radius: $navWidth;
+
+		&::before {
+			top: 0;
+			left: -100%;
+			border-top-right-radius: $navWidth;
+			border-bottom-right-radius: $navWidth;
+		}
+
+		&:hover::before {
+			left: 0;
+		}
+
+		&:active .navigate__icon {
+			animation: navigate-to-right 0.4s 0.1s ease both;
+		}
+	}
+
+	&--left {
+		border-top-left-radius: $navWidth;
+		border-bottom-left-radius: $navWidth;
+
+		&::before {
+			top: 0;
+			left: 100%;
+			border-top-left-radius: $navWidth;
+			border-bottom-left-radius: $navWidth;
+		}
+
+		&:hover::before {
+			left: 0;
+		}
+
+		&:active .navigate__icon {
+			animation: navigate-to-left 0.4s 0.1s ease both;
+		}
+	}
+
+	@include size($navWidth, $navHeight);
+
+	&::before {
+		transform: scale(0.9);
+	}
+
+	&__icon {
+		transition: 0.2s 0s ease all;
+		@include size($tog: $navWidth);
+	}
+
+	&:active::before {
+		transform: scale(0.9);
+	}
+}
+
+@keyframes navigate-to-right {
+	from,
+	0% {
+		transform: translateX(0);
+	}
+
+	45% {
+		transform: translateX(100%);
+	}
+
+	45.5% {
+		transform: translateX(-100%);
+	}
+
+	to,
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes navigate-to-left {
+	from,
+	0% {
+		transform: translateX(0);
+	}
+
+	45% {
+		transform: translateX(-100%);
+	}
+
+	45.5% {
+		transform: translateX(100%);
+	}
+
+	to,
+	100% {
+		transform: translateX(0);
 	}
 }
