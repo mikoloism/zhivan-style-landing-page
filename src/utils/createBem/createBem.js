@@ -11,7 +11,7 @@ function createBem(block) {
 		}
 
 		if (modifier) {
-			return `${block}--${modifier}`;
+			return `${block} ${block}--${modifier}`;
 		}
 
 		return `${block}`;
