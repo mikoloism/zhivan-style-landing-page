@@ -10,8 +10,8 @@ function createBem(block) {
 			return `${block}__${element}`;
 		}
 
-		if (element && modifier) {
-			return `${block}__${element}--${modifier}`;
+		if (modifier) {
+			return `${block}--${modifier}`;
 		}
 
 		return `${block}`;
