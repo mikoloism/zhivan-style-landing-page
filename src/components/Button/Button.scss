@@ -1,84 +1,83 @@
-@import './../../../node_modules/@yek/sass/dist/index.scss';
+@import './../../style/main.scss';
 
-$addToCart_size: 50px;
+$btnSize: 50px;
 
-.addToCart {
-	@include relative;
-	@include center(g-row);
+.cart,
+.buy {
 	@include clear-button;
-	@include size($tog: $addToCart_size);
+	@include size($tog: $btnSize);
+	@include relative;
+	display: inline-grid;
+	place-items: center;
+	place-content: center;
 	background: transparent;
 	color: color(primary);
 	border: 2px solid #{color(primary)};
 	overflow: hidden;
 
 	&__icon {
-		color: inherit;
 		@include size($tog: 18px);
-	}
-
-	& * {
-		z-index: inherit;
+		color: inherit;
+		transition: 0.4s 0.4s cubic-bezier(0.5, 1.75, 0.75, 1.25) stroke;
+		z-index: 1;
 	}
 
 	&::before {
+		@include absolute($top: 100%, $left: 0, $right: 0, $bottom: 0);
+		@include size($tog: 100%);
 		content: '';
 		display: block;
-		@include absolute(100%, 0, 0, 0);
-		@include size($tog: 100%);
 		background: color(primary);
-		z-index: -1;
-
-		// TOGGLE : /* to make it easy motion */ transform: scale(.8);
+		z-index: 0;
 	}
-
-	// transition //
 
 	&,
 	&::before {
 		transition: 0.4s cubic-bezier(0.5, 1.75, 0.75, 1.25) all;
 	}
 
-	&__icon {
-		transition: 0.4s 0.4s cubic-bezier(0.5, 1.75, 0.75, 1.25) stroke;
-	}
-
-	&:hover {
-		cursor: pointer;
-		&::before {
-			top: 0;
-			background: color(primary);
-		}
+	&:active::before {
+		transform: scale(0.8);
 	}
 
 	&:hover &__icon {
-		transform: scale(1.1);
 		stroke: color(secondary);
 	}
 }
 
-.addToCart {
-	&--rounded {
-		&,
-		&::before {
-			border-top: {
-				right-radius: $addToCart_size;
-				left-radius: $addToCart_size;
-			}
-		}
+.cart {
+	&::before {
+		top: 100%;
+	}
 
-		&::before {
-			top: 0;
-			transform: scale(0);
-		}
+	&:hover::before {
+		top: 0;
+	}
 
-		&:hover::before {
-			// TOGGLE : /* to make easy motion */ transform: scale(.9);
-			transform: scale(1);
+	&:hover &__icon {
+		transform: scale(1.1);
+	}
+}
+
+.buy {
+	&,
+	&::before {
+		border-top: {
+			right-radius: $btnSize;
+			left-radius: $btnSize;
 		}
 	}
 
-	&--rounded:hover &__icon {
+	&::before {
+		top: 0;
+		transform: scale(0);
+	}
+
+	&:hover::before {
+		transform: scale(1);
+	}
+
+	&:hover &__icon {
 		transition: 0.4s cubic-bezier(0.5, 1.75, 0.75, 1.25) all;
 	}
 }
