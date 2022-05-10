@@ -2,7 +2,7 @@
 
 $color-primary: #dfad8a;
 $color-secondary: #165752;
-$color-gray: #dfad8a;
+$color-active: #f5b56b;
 $color-white: #ffffff;
 $color-gradient: linear-gradient(178deg, #07070700, #000000);
 
@@ -11,7 +11,7 @@ $color-gradient: linear-gradient(178deg, #07070700, #000000);
 	(
 		color-primary: $color-primary,
 		color-secondary: $color-secondary,
-		color-gray: $color-gray,
+		color-active: $color-active,
 		color-white: $color-white,
 		color-gr-shadow: $color-gradient,
 	)
