@@ -5,6 +5,7 @@ import Image1 from './../assets/images/image-style(1).png';
 import Image2 from './../assets/images/image-style(2).png';
 import Image3 from './../assets/images/image-style(3).png';
 import Image4 from './../assets/images/image-style(4).png';
+import Image5 from './../assets/images/image-style(5).png';
 
 export default {
 	title: 'Atoms/Image',
@@ -24,3 +25,6 @@ PImage3.args = { src: Image3 };
 
 export const PImage4 = Template.bind({});
 PImage4.args = { src: Image4 };
+
+export const PImage5 = Template.bind({});
+PImage5.args = { src: Image5 };
