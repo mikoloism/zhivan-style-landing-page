@@ -41,34 +41,14 @@ class Headline extends React.Component {
 		);
 	}
 	renderTitle(type, text) {
-		switch (type) {
-			case '1':
-			case 'h1':
-				return this.renderH1(text);
-
-			case '2':
-			case 'h2':
-				return this.renderH2(text);
-
-			case '3':
-			case 'h3':
-				return this.renderH3(text);
-
-			case '4':
-			case 'h4':
-				return this.renderH4(text);
-
-			case '5':
-			case 'h5':
-				return this.renderH5(text);
-
-			case '6':
-			case 'h6':
-				return this.renderH6(text);
-
-			default:
-				return this.renderH1(text);
-		}
+		return [
+			this.renderH1,
+			this.renderH2,
+			this.renderH3,
+			this.renderH4,
+			this.renderH5,
+			this.renderH6,
+		][parseInt(type) || 0](text);
 	}
 
 	renderDescription(description) {
