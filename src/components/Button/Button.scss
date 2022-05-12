@@ -2,19 +2,25 @@
 
 $btnSize: 50px;
 
+.more,
 .navigate,
 .cart,
 .buy {
 	@include clear-button;
-	@include size($tog: $btnSize);
 	@include relative;
 	display: inline-grid;
 	place-items: center;
 	place-content: center;
+	border: 2px solid #{color(primary)};
 	background: transparent;
 	color: color(primary);
-	border: 2px solid #{color(primary)};
 	overflow: hidden;
+}
+
+.navigate,
+.cart,
+.buy {
+	@include size($tog: $btnSize);
 
 	&__icon {
 		@include size($tog: 18px);
@@ -43,6 +49,44 @@ $btnSize: 50px;
 
 	&:hover &__icon {
 		stroke: color(secondary);
+	}
+}
+
+.more {
+	border-radius: 0;
+	@include size(200px, 60px);
+	// grid-template-columns: 1fr 1fr 20px;
+	grid-template-rows: 20px 1fr 20px;
+	text-decoration: none;
+
+	&__icon,
+	&__text {
+		display: inline-block;
+		@include clear-space;
+		color: inherit;
+		z-index: 2;
+	}
+
+	&__icon {
+		@include size($tog: 60px);
+		grid-row: 2;
+		order: -1;
+		// grid-column: 1 / 2;
+	}
+
+	&__text {
+		font-size: 18px;
+		grid-row: 2;
+		// grid-column: 2 / 3;
+	}
+
+	&::before {
+		content: '';
+		display: block;
+		@include size;
+		background: color(primary);
+		@include absolute(0, 100%, 0, 0);
+		z-index: 1;
 	}
 }
 
@@ -80,6 +124,34 @@ $btnSize: 50px;
 
 	&:hover &__icon {
 		transition: 0.4s cubic-bezier(0.5, 1.75, 0.75, 1.25) all;
+	}
+}
+
+.more {
+	padding-right: 30px;
+
+	&:hover::before {
+		left: 0;
+	}
+
+	&:hover &__icon,
+	&:hover &__text {
+		color: color(secondary);
+		stroke: color(secondary);
+	}
+
+	&:active::before {
+		transition: 0.9s 0.2s ease all;
+		left: -100%;
+	}
+
+	&:active &__text {
+		color: color(primary);
+	}
+
+	&:active &__icon {
+		stroke: color(primary);
+		animation: more-to-right 0.9s 0.1s ease both;
 	}
 }
 
@@ -180,5 +252,36 @@ $navHeight: 60px;
 	to,
 	100% {
 		transform: translateX(0);
+	}
+}
+
+@keyframes more-to-right {
+	from,
+	0% {
+		transform: rotateZ(0deg) translateX(0px);
+	}
+
+	20% {
+		transform: rotateZ(180deg) translateX(0px);
+	}
+
+	40% {
+		transform: rotateZ(180deg) translateX(0px);
+	}
+
+	60% {
+		transform: rotateZ(180deg) translateX(-300%);
+	}
+	60.1% {
+		transform: rotateZ(180deg) translateX(100%);
+	}
+
+	90% {
+		transform: rotateZ(180deg) translateX(0px);
+	}
+
+	to,
+	100% {
+		transform: rotateZ(0deg) translateX(0px);
 	}
 }
