@@ -9,4 +9,4 @@ export default {
 const Template = (args) => <Buy {...args} />;
 
 export const index = Template.bind({});
-index.args = { click: () => {} };
+index.args = {};

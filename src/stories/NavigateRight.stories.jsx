@@ -9,3 +9,4 @@ export default {
 const Template = (args) => <NavigateRight {...args} />;
 
 export const index = Template.bind({});
+index.args = { click: () => {} };
