@@ -14,21 +14,29 @@
 			font-size: 60px;
 		}
 		&--h1 &__description {
-			font-size: 36px;
+			font-size: 48px;
 		}
 	}
 
 	& {
+		&--h2 {
+			height: 124px;
+		}
+
 		&--h2 &__title {
 			font-size: 52px;
 		}
 
-		&--h2 &__descriptions {
+		&--h2 &__description {
 			font-size: 32px;
 		}
 	}
 
 	& {
+		&--h3 {
+			height: 116px;
+		}
+
 		&--h3 &__title {
 			font-size: 48px;
 		}
@@ -38,6 +46,10 @@
 	}
 
 	& {
+		&--h4 {
+			height: 84px;
+		}
+
 		&--h4 &__title {
 			font-size: 32px;
 		}
@@ -47,6 +59,10 @@
 	}
 
 	& {
+		&--h5 {
+			height: 68px;
+		}
+
 		&--h5 &__title {
 			font-size: 24px;
 		}
