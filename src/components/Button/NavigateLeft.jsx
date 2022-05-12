@@ -4,11 +4,13 @@ import classnames from 'classnames';
 import { IChevronLeft } from './../Icon';
 import { createBem } from './../../utils';
 
-function NavigateLeft() {
+function NavigateLeft({ click, className }) {
 	const navigate = createBem('navigate');
 
 	return (
-		<Button className={classnames(navigate(null, 'left'))}>
+		<Button
+			onClick={click}
+			className={classnames(navigate(null, 'left'), className)}>
 			<IChevronLeft className={navigate('icon')} />
 		</Button>
 	);
