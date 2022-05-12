@@ -1,3 +1,3 @@
-import './../../style/main.scss';
+import './Headline.scss';
 
-export { default } from './Headline.jsx';
+export { default as Headline } from './Headline.jsx';
