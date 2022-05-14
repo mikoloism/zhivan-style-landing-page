@@ -1,6 +1,7 @@
 @import './../../style/main.scss';
 
 $btnSize: 50px;
+$btnBorder: 2px solid #{color(primary)};
 
 .more,
 .navigate,
@@ -11,7 +12,7 @@ $btnSize: 50px;
 	display: inline-grid;
 	place-items: center;
 	place-content: center;
-	border: 2px solid #{color(primary)};
+	border: $btnBorder;
 	background: transparent;
 	color: color(primary);
 	overflow: hidden;
@@ -213,6 +214,21 @@ $navHeight: 60px;
 	&:active::before {
 		transform: scale(0.9);
 	}
+}
+
+.link {
+	@include clear-button;
+	text-decoration: none;
+	padding: 18px 32px;
+	border: $btnBorder;
+	color: color(primary);
+	background: transparent;
+	text-align: center;
+	display: inline-grid;
+	place-items: center;
+	place-content: center;
+	font-size: 32px;
+	font-family: font(yekan, medium);
 }
 
 @keyframes navigate-to-right {
