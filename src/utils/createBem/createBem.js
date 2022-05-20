@@ -4,6 +4,7 @@ function createBem(block) {
 	function useElement(element, modifier) {
 		if (element) {
 			if (modifier) {
+				// TODO : check the modifier type if object( check as boolean ) else return modifier
 				return `${block}__${element} ${block}__${element}--${modifier}`;
 			}
 
