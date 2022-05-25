@@ -18,7 +18,8 @@
 		".gitignore": true,
 		"node_modules": true,
 		".storybook": true,
-		".vscode": true
+		".vscode": true,
+		"src/reportWebVitals.js": true
 	},
 	"explorerExclude.backup": null,
 	"cSpell.words": ["Bakh", "Yekan"]
