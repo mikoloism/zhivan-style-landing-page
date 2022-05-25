@@ -1,5 +1,7 @@
 @import './../../style/main.scss';
 
+// TODO : renaming `.navigate` className to anything else
+
 $btnSize: 50px;
 $btnBorder: 2px solid #{color(primary)};
 
@@ -217,6 +219,7 @@ $navHeight: 60px;
 }
 
 .link {
+	@include relative;
 	@include clear-button;
 	text-decoration: none;
 	padding: 18px 32px;
@@ -229,6 +232,12 @@ $navHeight: 60px;
 	place-content: center;
 	font-size: 32px;
 	font-family: font(yekan, medium);
+
+	&:hover {
+		border-color: transparent;
+		background: color(primary);
+		color: color(secondary);
+	}
 }
 
 @keyframes navigate-to-right {
