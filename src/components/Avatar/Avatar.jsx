@@ -1,11 +1,12 @@
 import React from 'react';
+import classnames from 'classnames';
 import { createBem } from '../../utils';
 import avatarImage from './../../assets/images/avatar.png';
 
 function Avatar({ className, displayName = 'علی اسدپور' }) {
 	const avatar = createBem('avatar');
 	return (
-		<figure className={avatar()}>
+		<figure className={classnames(avatar(), className)}>
 			<img
 				className={avatar('image')}
 				src={avatarImage}
