@@ -1,8 +1,38 @@
 @import './../../style/main.scss';
 
 .searchbox {
+	@include size(250px, 50px);
+	@include center;
+	border: 2px solid color(primary);
+
 	&__input {
+		@include clear-input;
+		@include size(200px, 48);
+		text-align: right;
+		padding: 3px 6px;
+		padding-right: 2ch;
+		background: transparent;
+
+		&,
+		&::placeholder {
+			font-size: 18px;
+			font-family: font(yekan, medium);
+		}
+
+		&::placeholder {
+			color: color(primary);
+		}
+
+		color: color(gray);
+
+		&:hover,
+		&:active,
+		&:focus {
+			box-shadow: none;
+		}
 	}
+
 	&__icon {
+		@include size($tog: 48);
 	}
 }
