@@ -1,0 +1,60 @@
+@import './../../style/main.scss';
+$linkActive: color(white);
+$linkDisActive: color(primary);
+::selection {
+	background: color(primary);
+	color: color(secondary);
+}
+.navigation {
+	@include size(100%, 40px);
+	position: sticky;
+	top: 0;
+
+	&,
+	&__list,
+	&__item,
+	&__link {
+		@include center;
+	}
+
+	&__list {
+		@include size;
+		flex-direction: row-reverse;
+	}
+
+	&__item {
+		display: inline-flex;
+		color: color(primary);
+		width: calc(100% / 6);
+
+		&--active {
+			color: color(white);
+		}
+	}
+
+	&__item--active &__text {
+		border-bottom: 2px solid currentColor;
+	}
+
+	&__link {
+		@include relative;
+		@include size;
+		text-decoration: none;
+		display: inline-grid;
+		place-items: center;
+		place-content: center;
+		color: inherit;
+		font-size: 24px;
+		font-family: font(yekan, medium);
+	}
+
+	&__text {
+		padding: 8px;
+	}
+
+	&__item,
+	&__link,
+	&__text {
+		text-align: center;
+	}
+}
