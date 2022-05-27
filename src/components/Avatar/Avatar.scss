@@ -1,0 +1,23 @@
+@import './../../../node_modules/@yek/sass/dist/index.scss';
+
+.avatar {
+	@include center;
+	justify-content: space-around;
+	flex-direction: row-reverse;
+	@include size(200px, 100px);
+
+	&__image {
+		@include image-fit-cover;
+		@include size($tog: 50px);
+		border: 2px solid color(primary);
+	}
+
+	&__name {
+		display: inline-block;
+		padding: 8px;
+		font-size: 24px;
+		font-family: font(yekan, medium);
+		color: color(primary);
+		border-bottom: 2px solid color(primary);
+	}
+}
