@@ -16,7 +16,11 @@ class SearchBox extends React.Component {
 		const search = createBem('searchbox');
 		return (
 			<form className={classnames('searchbox', this.props.className)}>
-				<input type='text' className={search('input')} />
+				<input
+					type='text'
+					placeholder='جستجوی محصولات'
+					className={search('input')}
+				/>
 				<ISearch className={search('icon')} />
 			</form>
 		);
