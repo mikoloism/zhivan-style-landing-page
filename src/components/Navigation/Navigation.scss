@@ -1,10 +1,13 @@
 @import './../../style/main.scss';
+
 $linkActive: color(white);
 $linkDisActive: color(primary);
+
 ::selection {
 	background: color(primary);
 	color: color(secondary);
 }
+
 .navigation {
 	@include size(100%, 40px);
 	position: sticky;
