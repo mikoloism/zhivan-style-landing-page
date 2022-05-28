@@ -3,7 +3,7 @@
 .searchbox {
 	@include size(250px, 50px);
 	@include center;
-	border: 2px solid color(primary);
+	@include border(color(primary));
 
 	&__input {
 		@include clear-input;

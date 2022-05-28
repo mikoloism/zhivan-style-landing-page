@@ -36,7 +36,7 @@ $linkDisActive: color(primary);
 	}
 
 	&__item--active &__text {
-		border-bottom: 2px solid currentColor;
+		@include border(currentColor, bottom);
 	}
 
 	&__link {
