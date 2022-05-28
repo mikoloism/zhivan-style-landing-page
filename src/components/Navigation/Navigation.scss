@@ -21,6 +21,8 @@ $linkDisActive: color(primary);
 	}
 
 	&__list {
+		@include clear-list;
+		@include clear-space;
 		@include size;
 		flex-direction: row-reverse;
 	}
