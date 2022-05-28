@@ -5,7 +5,7 @@
 	place-items: flex-end;
 	place-content: center;
 	grid-template-rows: 1fr 1fr;
-	@include border(color(white), right);
+	@include border(color(primary), right);
 	font-family: font(yekan, bold);
 	padding: 9px 16px;
 
