@@ -24,6 +24,7 @@ function NavigationItem({ text, path, isActive }) {
 		<li className={nav('item', isActive && 'active')}>
 			<a href={`#${path}`} className={nav('link')}>
 				<span className={nav('text')}>{text}</span>
+				<span className={nav('text')}>{text}</span>
 			</a>
 		</li>
 	);
