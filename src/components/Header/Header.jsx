@@ -9,7 +9,7 @@ import { Cart } from './../Button';
 function Header() {
 	const header = createBem('header');
 	return (
-		<header className={header}>
+		<header className={header()}>
 			<section className={header('center')}>
 				<h1 className={header('title')}>ZHIVAN STYLE</h1>
 				<Navigation className={header('navigation')} />
