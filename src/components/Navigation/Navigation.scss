@@ -11,7 +11,7 @@ $linkDisActive: color(primary);
 .navigation {
 	&,
 	&__link {
-		@include size(100%, 40px);
+		@include size(100%, 50px);
 	}
 
 	position: sticky;
@@ -75,10 +75,9 @@ $linkDisActive: color(primary);
 
 	&__item {
 		&--active {
-			color: color(white);
-
 			& .navigation__text:nth-child(2) {
-				@include border(currentColor, bottom);
+				color: color(white);
+				@include border(color(white), bottom);
 			}
 		}
 
@@ -93,6 +92,38 @@ $linkDisActive: color(primary);
 				transform: translateY(22px);
 				opacity: 0;
 			}
+		}
+	}
+}
+
+// startup animations
+@keyframes push-in {
+	from,
+	0% {
+		transform: translateY(-50px);
+	}
+
+	to,
+	100% {
+		transform: translateY(0);
+	}
+}
+
+.navigation {
+	overflow: hidden;
+	&__item {
+		animation: push-in ease both;
+		animation-duration: 0.5s;
+		// TOGGLE : animation-timing-function: cubic-bezier(0.5, 1.75, 0.75, 1.25);
+		transform: translateY(-2px);
+	}
+
+	$delay: 1; // start delay from
+	// HINT : `to 7` to selecting 6 element
+	@for $index from 1 to 7 {
+		&__item:nth-child(#{$index}) {
+			animation-delay: unquote('#{$delay}s');
+			$delay: $delay + 0.5; // delay steps
 		}
 	}
 }
