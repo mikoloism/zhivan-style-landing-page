@@ -30,6 +30,14 @@ $font-yekan-fat: 'yekan-bakh-fat';
 	)
 );
 
+@mixin border($color, $pos: null) {
+	@if $pos == null {
+		border: 2px solid $color;
+	} @else {
+		border-#{$pos}: 2px solid $color;
+	}
+}
+
 body {
 	background: color(secondary);
 	@include useFont(yekan, bold);
