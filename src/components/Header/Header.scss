@@ -66,3 +66,8 @@
 	&__avatar {
 	}
 }
+
+.header {
+	overflow: hidden;
+	animation: push-in 0.5s ease both;
+}
