@@ -9,7 +9,11 @@ $linkDisActive: color(primary);
 }
 
 .navigation {
-	@include size(100%, 40px);
+	&,
+	&__link {
+		@include size(100%, 40px);
+	}
+
 	position: sticky;
 	top: 0;
 
@@ -31,19 +35,10 @@ $linkDisActive: color(primary);
 		display: inline-flex;
 		color: color(primary);
 		width: calc(100% / 6);
-
-		&--active {
-			color: color(white);
-		}
-	}
-
-	&__item--active &__text {
-		@include border(currentColor, bottom);
 	}
 
 	&__link {
 		@include relative;
-		@include size;
 		text-decoration: none;
 		display: inline-grid;
 		place-items: center;
@@ -51,6 +46,7 @@ $linkDisActive: color(primary);
 		color: inherit;
 		font-size: 20px;
 		font-family: font(yekan, medium);
+		overflow: hidden !important;
 	}
 
 	&__text {
@@ -61,5 +57,42 @@ $linkDisActive: color(primary);
 	&__link,
 	&__text {
 		text-align: center;
+	}
+
+	&__text {
+		&:nth-child(1) {
+			transform: translateY(-25px);
+			background: color(primary);
+			color: color(secondary);
+			opacity: 0;
+		}
+
+		&:nth-child(2) {
+			transform: translateY(-25px);
+			opacity: 1;
+		}
+	}
+
+	&__item {
+		&--active {
+			color: color(white);
+
+			& .navigation__text:nth-child(2) {
+				@include border(currentColor, bottom);
+			}
+		}
+
+		&:hover {
+			& .navigation__text:nth-child(1) {
+				@include border(color(primary), top);
+				transform: translateY(22px);
+				opacity: 1;
+				width: 100%;
+			}
+			& .navigation__text:nth-child(2) {
+				transform: translateY(22px);
+				opacity: 0;
+			}
+		}
 	}
 }
