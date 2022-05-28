@@ -1,6 +1,7 @@
 @import './../../style/main.scss';
 
 .searchbox {
+	direction: rtl;
 	@include size(250px, 50px);
 	@include center;
 	@include border(color(primary));
@@ -34,5 +35,6 @@
 
 	&__icon {
 		@include size($tog: 48);
+		order: -1;
 	}
 }
