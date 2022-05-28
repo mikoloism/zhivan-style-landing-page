@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { createBem } from './../../utils';
 import { ISearch } from './../Icon';
-import './SearchBox.scss';
 
 class SearchBox extends React.Component {
 	constructor(props) {
