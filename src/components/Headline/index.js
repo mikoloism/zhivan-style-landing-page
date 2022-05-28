@@ -1,3 +1,3 @@
 import './Headline.scss';
 
-export { default as Headline } from './Headline.jsx';
+export { default } from './Headline.jsx';
