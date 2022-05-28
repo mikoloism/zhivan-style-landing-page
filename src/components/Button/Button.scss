@@ -3,7 +3,6 @@
 // TODO : renaming `.navigate` className to anything else
 
 $btnSize: 50px;
-$btnBorder: 2px solid #{color(primary)};
 
 .more,
 .navigate,
@@ -14,7 +13,7 @@ $btnBorder: 2px solid #{color(primary)};
 	display: inline-grid;
 	place-items: center;
 	place-content: center;
-	border: $btnBorder;
+	@include border(color(primary));
 	background: transparent;
 	color: color(primary);
 	overflow: hidden;
@@ -223,7 +222,7 @@ $navHeight: 60px;
 	@include clear-button;
 	text-decoration: none;
 	padding: 18px 32px;
-	border: $btnBorder;
+	@include border(color(primary));
 	color: color(primary);
 	background: transparent;
 	text-align: center;
