@@ -1,14 +1,15 @@
 import React from 'react';
 import { createBem } from './../../utils';
+import classnames from 'classnames';
 
 import Image from '../Image';
 import { Buy } from '../Button';
 import Headline from '../Headline';
 
-function CoverLink({ href, text }) {
+function CoverLink({ href, text, className }) {
 	// { text } in styling should colored transparent
 	return (
-		<a className='hidden-link' href={href}>
+		<a className={classnames(className, 'hidden-link')} href={href}>
 			{text}
 		</a>
 	);
