@@ -1,9 +1,89 @@
 @import './../../style/main.scss';
 
 .product {
-	&__image {
+	@include relative;
+	@include center;
+	@include clear-space;
+	@include size(500px, 850px);
+
+	&__link {
+		color: transparent;
+		user-select: none;
+		@include absolute(0, 0, 0, 0);
+		@include size;
+		z-index: 4;
 	}
 
-	&__detail {
+	&__thumbnail {
+		@include clear-space;
+		@include size(500px, 700px);
+		&::after {
+			width: 480px;
+		}
+
+		z-index: 3;
+	}
+
+	&__details {
+		@include center;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+		padding: 9px 32px;
+		@include size(100%, 100px);
+		@include border(color(primary));
+		margin-top: -2px; // HINT : border-width is 2px
+		z-index: 1;
+	}
+
+	&:hover &__buy {
+		z-index: 5;
+	}
+
+	&:hover &__thumbnail {
+		margin-bottom: 9px;
+
+		&::before {
+			transform: translateY(2px);
+			z-index: 0;
+			border-bottom: {
+				left-radius: 200px;
+				right-radius: 200px;
+			}
+		}
+
+		img {
+			transform: translate(20px, -5px);
+		}
+
+		&::after {
+			transform: translate(30px, 20px);
+			z-index: 1;
+			border-bottom: {
+				left-radius: 200px;
+				right-radius: 200px;
+			}
+		}
+	}
+
+	&:hover &__details {
+		margin-top: 9px;
+		@include radius(32);
+		// border-color: color(white);
+	}
+
+	/* ADDITIONAL EFFECT */
+
+	&:active &__thumbnail {
+		&::after {
+			transform: none;
+		}
+	}
+
+	&:hover &__buy {
+		border-radius: 90px;
+	}
+
+	&:hover .headline {
+		border-color: transparent;
 	}
 }
