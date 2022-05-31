@@ -44,8 +44,8 @@ function Product({ className, thumbnail, name, description, id }) {
 				alt={`Zhivan Style | ${name} | ${description}`}
 			/>
 			<section className={product('details')}>
-				<Headline type='h2' title={name} description={description} />
-				<Buy />
+				<Headline type='h5' title={name} description={description} />
+				<Buy className={product('buy')} />
 			</section>
 		</section>
 	);
