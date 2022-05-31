@@ -4,14 +4,6 @@ import classnames from 'classnames';
 import { createBem } from './../../utils';
 import image from './../../assets/images/image-style(3).png';
 
-function Picture() {
-	return (
-		<picture>
-			<img src={image} alt='style | zhivan style' />
-		</picture>
-	);
-}
-
 function Image({ src, alt, className }) {
 	const cover = createBem('cover');
 
@@ -44,4 +36,3 @@ Image.defaultProps = {
 };
 
 export default Image;
-export { Picture };
