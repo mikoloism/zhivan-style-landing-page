@@ -5,6 +5,7 @@ import classnames from 'classnames';
 import Image from '../Image';
 import { Buy } from '../Button';
 import Headline from '../Headline';
+import thumbImage from '../../assets/images/image-style(3).png';
 
 function CoverLink({ href, text, className }) {
 	// { text } in styling should colored transparent
@@ -49,5 +50,11 @@ function Product({ className, thumbnail, name, description, id }) {
 		</section>
 	);
 }
+
+Product.defaultProps = {
+	name: 'تونیک زنانه گلدار',
+	description: "Floral women's tonic",
+	thumbnail: thumbImage,
+};
 
 export default Product;
