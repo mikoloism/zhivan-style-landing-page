@@ -16,12 +16,8 @@ function Image({ src, alt, className }) {
 	const cover = createBem('cover');
 
 	return (
-		<figure className={classnames(className?.figure, cover())}>
-			<img
-				className={classnames(className?.img, cover('image'))}
-				src={src}
-				alt={alt}
-			/>
+		<figure className={classnames(className, cover())}>
+			<img className={cover('image')} src={src} alt={alt} />
 		</figure>
 	);
 }
