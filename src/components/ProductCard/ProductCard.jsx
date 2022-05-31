@@ -32,7 +32,11 @@ function Product({ className, thumbnail, name, description, id }) {
 
 	return (
 		<section className={product()}>
-			<CoverLink href={`#/products/${id}`} text={name} />
+			<CoverLink
+				className={product('link')}
+				href={`#/products/${id}`}
+				text={name}
+			/>
 			<Image
 				src={thumbnail}
 				className={product('thumbnail')}
