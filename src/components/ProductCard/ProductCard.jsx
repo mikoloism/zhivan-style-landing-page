@@ -32,7 +32,7 @@ function Product({ className, thumbnail, name, description, id }) {
 	const product = createBem('product');
 
 	return (
-		<section className={product()}>
+		<section className={classnames(className, product())}>
 			<CoverLink
 				className={product('link')}
 				href={`#/products/${id}`}
