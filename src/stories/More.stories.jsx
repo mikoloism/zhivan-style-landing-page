@@ -1,5 +1,5 @@
 import React from 'react';
-import { More } from './../components/Button';
+import { More } from '../components/Button';
 
 export default {
 	title: 'Atoms/Button/More',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from './../components/Button';
+import { Link } from '../components/Button';
 
 export default {
 	title: 'Atoms/Button/Link',

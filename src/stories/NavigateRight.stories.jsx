@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavigateRight } from './../components/Button';
+import { NavigateRight } from '../components/Button';
 
 export default {
 	title: 'Atoms/Button/NavigateRight',

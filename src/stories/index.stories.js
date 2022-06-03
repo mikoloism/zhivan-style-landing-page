@@ -5,7 +5,7 @@ import {
 	Buy as BuyComponent,
 	NavigateLeft as NavigateLeftComponent,
 	NavigateRight as NavigateRightComponent,
-} from './../components/Button';
+} from '../components/Button';
 
 import SearchBoxComponent from '../components/SearchBox';
 import AvatarComponent from '../components/Avatar';
