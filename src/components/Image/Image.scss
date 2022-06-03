@@ -66,7 +66,7 @@
 		transform: translateY(-20px) scale(0.9);
 
 		&::before {
-			border {
+			border: {
 				color: color(secondary);
 				radius: 0 0 100rem 100rem;
 				width: 4px;
