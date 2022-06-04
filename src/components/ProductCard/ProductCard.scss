@@ -1,24 +1,41 @@
 @import './../../style/main.scss';
 
 .product {
+	@include set-var(product_width, 500px);
+	@include set-var(product_height, calc(var(--product_width) + 350px));
+	@include set-var(product_details, 28.1em);
+	@include set-var(product_cover_width, calc(var(--product_width) - 50px));
+	@include set-var(
+		product_cover_height,
+		calc(var(--product_cover_width) + 250px)
+	);
+	@include set-var(product_bg, calc(var(--product_width) - 20px));
+	@include set-var(product_bg_hover, calc(var(--product_width) - 70px));
+	@include set-var(product_image, calc(var(--product_width) + 200px));
+}
+
+.product {
 	@include relative;
 	@include center;
+	flex-direction: column;
 	@include clear-space;
-	@include size(500px, 850px);
+	@include size(val(product_width), val(product_height));
+	overflow: hidden;
 
 	&__link {
 		color: transparent;
 		user-select: none;
 		@include absolute(0, 0, 0, 0);
-		@include size;
+		@include size(val(product_width), val(product_height));
 		z-index: 4;
 	}
 
 	&__thumbnail {
 		@include clear-space;
-		@include size(500px, 700px);
+		width: val(product_cover_width) !important;
+		height: val(product_cover_height) !important;
 		&::after {
-			width: 480px;
+			width: val(product_bg);
 		}
 
 		z-index: 3;
@@ -29,9 +46,9 @@
 		flex-direction: row-reverse;
 		justify-content: space-between;
 		padding: 9px 32px;
-		@include size(100%, 100px);
+		@include size(val(product_details), 100px);
 		@include border(color(primary));
-		margin-top: -2px; // HINT : border-width is 2px
+		margin-top: -2px; // HINT : border-top-width is 2px
 		z-index: 1;
 	}
 
@@ -57,6 +74,7 @@
 
 		&::after {
 			transform: translate(30px, 20px);
+			width: val(product_bg_hover);
 			z-index: 1;
 			border-bottom: {
 				left-radius: 200px;
@@ -73,11 +91,11 @@
 
 	/* ADDITIONAL EFFECT */
 
-	&:active &__thumbnail {
-		&::after {
-			transform: none;
-		}
-	}
+	// &:active &__thumbnail {
+	// 	&::after {
+	// 		transform: translate(30px, 20px) scale(0.8);
+	// 	}
+	// }
 
 	&:hover &__buy {
 		border-radius: 90px;
