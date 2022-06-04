@@ -1,4 +1,40 @@
 @import './../../style/main.scss';
 
 .favorite {
+	@include size(100%, 97vh);
+	background: color(secondary);
+	@include center;
+	justify-content: space-between;
+	// padding-top: 15px;
+	// margin-top: -15px;
+
+	&__header {
+		@include center;
+		// padding: 60px 0;
+		@include size(100%, 85px);
+	}
+
+	&__products {
+		@include center;
+		@include size(100%, calc(100% - 85px));
+		justify-content: space-around;
+		margin-bottom: -75px;
+	}
+
+	&__more {
+		justify-self: flex-start;
+	}
+
+	&__line {
+		@include size(calc(100% - 920px), 2px);
+		background: color(primary);
+		margin: auto 16px;
+	}
+
+	&__headline {
+		place-self: flex-end;
+	}
+
+	&__product {
+	}
 }
