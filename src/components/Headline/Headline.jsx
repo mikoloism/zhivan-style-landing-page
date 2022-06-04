@@ -20,9 +20,9 @@ function RenderDescription({ text }) {
 	return <span className={classnames(heading('description'))}>{text}</span>;
 }
 
-function Headline({ type, title, description }) {
+function Headline({ type, title, description, className }) {
 	return (
-		<section className={classnames(heading(null, type))}>
+		<section className={classnames(className, heading(null, type))}>
 			<RenderTitle type={type} text={title} />
 			<RenderDescription text={description} />
 		</section>
