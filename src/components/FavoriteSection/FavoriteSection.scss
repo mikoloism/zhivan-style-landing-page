@@ -3,17 +3,38 @@
 .favorite {
 	@include size(100%, 97vh);
 	background: color(secondary);
-	@include center;
-	justify-content: space-between;
-	// padding-top: 15px;
-	// margin-top: -15px;
+	display: grid;
+	grid-template-rows: repeat(12, 1fr);
+	grid-template-columns: 1fr;
+	grid-template-areas:
+		'header'
+		'header'
+		'products'
+		'products'
+		'products'
+		'products'
+		'products'
+		'products'
+		'products'
+		'products'
+		'products';
+	place-content: center;
+	place-items: center;
+	// padding: 30px 60px;
+	row-gap: 25px;
 
 	&__header {
-		@include center;
-		// padding: 60px 0;
-		@include size(100%, 85px);
+		grid-column: 1;
+		grid-area: header;
 	}
 
+	&__products {
+		grid-column: 1;
+		grid-area: products;
+	}
+}
+
+.favorite {
 	&__products {
 		@include center;
 		@include size(100%, calc(100% - 85px));
@@ -21,20 +42,37 @@
 		margin-bottom: -75px;
 	}
 
-	&__more {
-		justify-self: flex-start;
+	&__product {
+		// width: 33% !important;
 	}
+}
 
-	&__line {
-		@include size(calc(100% - 920px), 2px);
-		background: color(primary);
-		margin: auto 16px;
+.favorite {
+	&__header {
+		@include size(100%, 85px);
+		display: grid;
+		grid-template-rows: 1fr;
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-areas: 'more more line line line line line line line headline headline headline';
+		place-content: center;
+		place-items: center;
+		margin: 0 60px;
 	}
 
 	&__headline {
-		place-self: flex-end;
+		grid-area: headline;
+		grid-row: 1;
 	}
 
-	&__product {
+	&__line {
+		grid-area: line;
+		grid-row: 1;
+		@include size(100%, 2px);
+		background: color(primary);
+	}
+
+	&__more {
+		grid-area: more;
+		grid-row: 1;
 	}
 }
