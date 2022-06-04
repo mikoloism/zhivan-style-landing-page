@@ -42,3 +42,7 @@ body {
 	background: color(secondary);
 	@include useFont(yekan, bold);
 }
+body,
+#root {
+	@include size(100%, 95vh);
+}
