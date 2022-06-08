@@ -28,11 +28,15 @@ HINT : structure
 		- link(add-to-cart)
  **/
 
-function Product({ className, thumbnail, name, description, id }) {
+function Product({ className, round, thumbnail, name, description, id }) {
 	const product = createBem('product');
 
 	return (
-		<section className={classnames(className, product())}>
+		<section
+			className={classnames(
+				className,
+				product(null, round ?? 'rounded'),
+			)}>
 			<CoverLink
 				className={product('link')}
 				href={`#/products/${id}`}

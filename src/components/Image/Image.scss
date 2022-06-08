@@ -15,6 +15,10 @@
 		@include absolute;
 		content: '';
 		display: block;
+	}
+
+	&--rounded &::before,
+	&--rounded &::after {
 		border-top: {
 			right-radius: 100rem;
 			left-radius: 100rem;
@@ -30,10 +34,13 @@
 
 	&::after {
 		@include size(450px, 580px);
-		bottom: 30px;
-		left: -20px;
 		background: color(primary);
 		z-index: 0;
+	}
+
+	&--rounded &::after {
+		bottom: 30px;
+		left: -20px;
 	}
 
 	&__image {
@@ -62,13 +69,16 @@
 		transition-property: left, bottom;
 	}
 
+	&--rounded:hover &::before {
+		border-radius: 0 0 100rem 100rem;
+	}
+
 	&:hover {
 		transform: translateY(-20px) scale(0.9);
 
 		&::before {
 			border: {
 				color: color(secondary);
-				radius: 0 0 100rem 100rem;
 				width: 4px;
 			}
 			left: -30px;
