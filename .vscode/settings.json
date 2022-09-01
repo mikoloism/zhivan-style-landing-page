@@ -14,13 +14,13 @@
 		"src/setupTests.js": true,
 		"README.md": true,
 		"package-lock.json": true,
-		"package.json": true,
 		".gitignore": true,
 		"node_modules": true,
 		".storybook": true,
 		".vscode": true,
-		"src/reportWebVitals.js": true
+		"src/reportWebVitals.js": true,
+		"package.json": false
 	},
-	"explorerExclude.backup": null,
+	"explorerExclude.backup": {},
 	"cSpell.words": ["asadpour", "Bakh", "Yekan", "اسدپور"]
 }
