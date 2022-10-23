@@ -12,7 +12,18 @@
         "**/.factorypath": true,
         ".eslintrc.json": true,
         "**/*.d.ts": true,
-        "**/.prettierrc": true
+        "**/.prettierrc": true,
+        ".gitignore": true,
+        "package-lock.json": true,
+        "node_modules": true,
+        ".vscode": true,
+        ".next": true,
+        "docs": true,
+        "README.md": true,
+        "package.json": true,
+        "public": true,
+        "next.config.js": true,
+        "tsconfig.json": true
     },
     "explorerExclude.backup": {},
     "conventionalCommits.scopes": [
