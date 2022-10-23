@@ -16,21 +16,24 @@
         "incremental": true,
         "baseUrl": "./",
         "paths": {
-            "libs/normalize.css": ["node_modules/normalize.css/normalize.css"],
-            "libs/yek/sass": ["node_modules/@yek/sass/dist/index.scss"],
             "components/*": ["components/*"],
             "pages/*": ["pages/*"],
+            "styles/*": ["styles/*"],
+            "styles/normalize.css": [
+                "node_modules/normalize.css/normalize.css"
+            ],
+            "styles/yek.scss": ["node_modules/@yek/sass/dist/index.scss"],
             "atoms/*": ["components/atoms/*"],
-            "atoms/*.module.*": ["styles/components/atoms/*"],
+            "atoms/*.module.scss": ["styles/components/atoms/*"],
             "atoms": ["components/atoms"],
             "molecules/*": ["components/molecules/*"],
-            "molecules/*.module.*": ["styles/components/molecules/*"],
+            "molecules/*.module.scss": ["styles/components/molecules/*"],
             "molecules": ["components/molecules"],
             "organisms/*": ["components/organisms/*"],
-            "organisms/*.module.*": ["styles/components/organisms/*"],
+            "organisms/*.module.scss": ["styles/components/organisms/*"],
             "organisms/": ["components/organisms"],
             "templates/*": ["components/templates/*"],
-            "templates/*.module.*": ["styles/components/templates/*"],
+            "templates/*.module.scss": ["styles/components/templates/*"],
             "templates": ["components/templates"]
         }
     },
