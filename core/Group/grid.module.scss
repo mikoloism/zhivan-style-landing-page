@@ -1,0 +1,52 @@
+@mixin generate-grid-start-end($from: 1, $to: 12) {
+    @each $dir in (col, row) {
+        @for $start from $from through $to {
+            @for $end from $from through $to {
+                .#{$dir}-#{$start}\/#{$end} {
+                    @if ($dir == col) {
+                        grid-column: #{$start} / #{$end};
+                    } @else {
+                        grid-row: #{$start} / #{$end};
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin generate-grid-span($from: 1, $to: 12) {
+    @each $dir in (col, row) {
+        @for $span from $from through $to {
+            .#{$dir}-#{$span} {
+                @if ($dir == col) {
+                    grid-column: #{$span};
+                } @else {
+                    grid-row: #{$span};
+                }
+            }
+        }
+    }
+}
+
+@mixin generate-grid-classname {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+    }
+
+    .inline-grid {
+        display: inline-grid;
+    }
+
+    .grid-center {
+        display: grid;
+        place-items: center;
+        place-content: center;
+    }
+
+    @include generate-gird-start-end();
+    @include generate-grid-span();
+}
+
+@include generate-grid-classname;

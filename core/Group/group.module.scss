@@ -1,0 +1,57 @@
+@mixin generate-place-align {
+    @each $dir in (items, content) {
+        @each $align in (center, start, end, stretch) {
+            .place-#{$dir}-#{$align} {
+                @if ($align == start) {
+                    $align: flex-start;
+                }
+
+                @if ($align == end) {
+                    $align: flex-end;
+                }
+
+                place-#{$dir}: #{$align};
+            }
+        }
+    }
+
+    @each $align in (center, start, end, stretch) {
+        .place-#{$align} {
+            @if ($align == start) {
+                $align: flex-start;
+            }
+
+            @if ($align == end) {
+                $align: flex-end;
+            }
+
+            place-items: #{$align};
+            place-content: #{$align};
+        }
+    }
+
+    .place-content-between {
+        place-content: space-between;
+    }
+
+    .place-content-around {
+        place-content: space-around;
+    }
+}
+
+@mixin generate-gap-size($from: 1, $to: 32) {
+    @each $dir in (x, y) {
+        @for $size from $from through $to {
+            .grid-#{$dir}-#{$size} {
+                @if ($dir == x) {
+                    column-gap: unquote('#{$size}px');
+                } @else {
+                    row-gap: unquote('#{$size}px');
+                }
+            }
+        }
+    }
+}
+
+@include generate-gap-size();
+@include generate-place-align();

@@ -1,0 +1,38 @@
+@mixin generate-flex-direction {
+    $flex-direction: (column, column-reverse, row, row-reverse);
+
+    @each $fd in $flex-direction {
+        .flex-#{$fd} {
+            flex-direction: #{$fd};
+        }
+    }
+}
+
+@mixin generate-flex-classname {
+    .flex {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .inline-flex {
+        display: inline-flex;
+        flex-wrap: wrap;
+    }
+
+    .flex-nowrap {
+        flex-wrap: nowrap;
+    }
+
+    .flex-center {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        place-items: center;
+        place-content: center;
+    }
+
+    @include generate-flex-direction;
+}
+
+@include generate-flex-classname;
