@@ -1,0 +1,40 @@
+.link--overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0);
+    color: rgba(255, 255, 255, 0);
+    z-index: 90;
+}
+
+.link--fancy {
+    //@ CREDITS : https://codepen.io/escapist/pen/EaQygW
+    color: $link-color;
+    position: relative;
+    text-decoration: none;
+    transition: all 0.15s ease-out;
+    &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        bottom: 0px;
+        left: 0;
+        background: #f00;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 0.3s ease-in-out 0s;
+    }
+    &:hover {
+        transition: all 0.15s ease-out;
+        &:before {
+            visibility: visible;
+            transform: scaleX(1);
+        }
+    }
+}
