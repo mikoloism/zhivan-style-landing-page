@@ -19,7 +19,7 @@
 	</symbol>
 	<symbol id="arrow-left" class="sprites__symbol" viewBox="0 0 72 60" stroke="#dfad8a" stroke-width="2">
 		<title>arrow left svg icon</title>
-		<g stroke="inherit" stroke-width="inherit" transform="translate(-1649 -3618)">
+		<g transform="translate(-1649 -3618)">
 			<g transform="translate(1667.75 3632.75)">
 				<path d="M4.25,12.274H35.777" transform="translate(0 2.979)" fill="none" stroke="inherit"
 					stroke-linecap="round" stroke-linejoin="round" stroke-width="inherit" />
@@ -30,7 +30,7 @@
 	</symbol>
 	<symbol id="arrow-right" class="sprites__symbol" viewBox="0 0 72 60" stroke="#dfad8a" stroke-width="2">
 		<title>arrow right svg icon</title>
-		<g stroke="inherit" stroke-width="inherit" transform="translate(17.473 21)">
+		<g transform="translate(17.473 21)">
 			<path d="M35.777,12.274H4.25" transform="translate(-4.25 -3.27)" fill="none" stroke="inherit"
 				stroke-linecap="round" stroke-linejoin="round" stroke-width="inherit" />
 			<path d="M4.25,24.257l9.042-9-9.042-9" transform="translate(18.236 -6.25)" fill="none" stroke="inherit"
@@ -39,7 +39,7 @@
 	</symbol>
 	<symbol id="search" class="sprites__symbol" viewBox="0 0 72 60" stroke="#dfad8a" stroke-width="2">
 		<title>arrow right svg icon</title>
-		<g stroke="inherit" stroke-width="inherit" transform="translate(0.75 0.75)">
+		<g transform="translate(0.75 0.75)">
 			<circle cx="8.989" cy="8.989" r="8.989" transform="translate(0 0)" fill="none" stroke="inherit"
 				stroke-linecap="round" stroke-linejoin="round" stroke-width="inherit" />
 			<path d="M18.018,18.485,21.542,22" transform="translate(-2.778 -2.778)" fill="none" stroke="inherit"
