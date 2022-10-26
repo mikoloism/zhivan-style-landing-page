@@ -1,5 +1,12 @@
+import { Sprite } from 'core';
 import { Component } from 'utils';
-import type { IconName } from './icon-repository';
+
+export type IconName =
+    | 'arrow-left'
+    | 'arrow-right'
+    | 'cart'
+    | 'chevron-top'
+    | 'search';
 
 type Props = { icon: IconName };
 
@@ -10,12 +17,10 @@ export class IconComponent extends Component<Props> {
 
     public render() {
         return (
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="64"
-                height="64">
-                <use xlinkHref={`#${this.props.icon}`}></use>
-            </svg>
+            <Sprite
+                load="icons"
+                name={this.props.icon}
+            />
         );
     }
 }

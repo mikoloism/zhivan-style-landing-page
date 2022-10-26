@@ -1,4 +1,3 @@
-import { IconSprites } from 'core';
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 
 export default class MyDocument extends Document {
@@ -30,7 +29,6 @@ export default class MyDocument extends Document {
                 <body>
                     <Main />
                     <NextScript />
-                    <IconSprites />
                 </body>
             </Html>
         );
