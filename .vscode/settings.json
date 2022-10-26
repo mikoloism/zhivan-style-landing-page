@@ -22,6 +22,7 @@
         "README.md": true,
         "package.json": true,
         "public": true,
+        "public/*.*": true,
         "next.config.js": true,
         "tsconfig.json": true
     },
