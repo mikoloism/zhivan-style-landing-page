@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app';
-import 'styles/normalize.css';
-import 'styles/globals.css';
 import Head from 'next/head';
+import 'styles/normalize.css';
+import 'styles/globals.scss';
 
 function AppRenderer({ Component: PageComponent, pageProps }: AppProps) {
     return (

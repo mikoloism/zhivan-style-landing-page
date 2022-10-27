@@ -1,0 +1,17 @@
+@import './base/_colors.scss';
+@import './base/_fonts.scss';
+@import './base/_setup.scss';
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.sprites {
+    display: none;
+}
+
+.sprites__symbol {
+    width: 100%;
+    height: 100%;
+}
