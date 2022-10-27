@@ -24,7 +24,9 @@
         "public": true,
         "public/*.*": true,
         "next.config.js": true,
-        "tsconfig.json": true
+        "tsconfig.json": true,
+        "pages": true,
+        "utils": true
     },
     "explorerExclude.backup": {},
     "conventionalCommits.scopes": [
