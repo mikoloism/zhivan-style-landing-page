@@ -1,0 +1,59 @@
+@mixin generate-text-size($size, $weight, $line-height, $letter-space: 0) {
+    @if $weight == bold {
+        font-weight: 700;
+        font-family: 'yekan-bakh-bold';
+    } @else {
+        font-weight: 400;
+        font-family: 'yekan-bakh-medium';
+    }
+
+    font-size: $size;
+    line-height: unquote('#{$line-height}');
+    letter-spacing: unquote('#{$letter-space}');
+}
+
+.text-xs {
+    @include generate-text-size(1.125rem, medium, 28px);
+}
+
+.text-sm {
+    @include generate-text-size(1.375rem, medium, 34px);
+}
+
+.text-md {
+    @include generate-text-size(1.5rem, medium, 37px);
+}
+
+.text-lg {
+    @include generate-text-size(1.625rem, bold, 40px);
+}
+
+.text-xl {
+    @include generate-text-size(1.75rem, bold, 43px);
+}
+
+.text-2xl {
+    @include generate-text-size(2rem, medium, 50px);
+}
+
+.text-3xl {
+    @include generate-text-size(2.625rem, medium, 65px, 20px);
+}
+
+.text-4xl {
+    @include generate-text-size(3rem, bold, 74px);
+}
+
+.text-5xl {
+    @include generate-text-size(3.25rem, bold, 81px);
+}
+
+.weight-bold {
+    font-weight: 700;
+    font-family: 'yekan-bakh-bold';
+}
+
+.weight-medium {
+    font-weight: 400;
+    font-family: 'yekan-bakh-medium';
+}
