@@ -146,3 +146,18 @@ This file tree only accepted when style based on `scss/sass/less`
 - `layouts/` is components which use `organisms/` component or combined them as one eco-system component
 - `templates/` the page templates and their eco-system and use each `atoms/`, `molecules/`, `organisms` or `Layouts/` their self
 - `pages/`, should instance the `templates/` component and for the have isolated states (and globals states)
+
+## Typography
+
+| #   | Font-Size(px) | Font-Size(rem) | Keyword |
+| --- | ------------- | -------------- | ------- |
+| 1   | 16            | 1              | base    |
+| 2   | 18            | 1.125          | xs      |
+| 3   | 22            | 1.1375         | sm      |
+| 4   | 24            | 1.5            | md      |
+| 5   | 26            | 1.625          | lg      |
+| 6   | 28            | 1.75           | xl      |
+| 7   | 32            | 2              | 2xl     |
+| 8   | 42            | 2.625          | 3xl     |
+| 9   | 48            | 3              | 4xl     |
+| 10  | 52            | 3.25           | 5xl     |
