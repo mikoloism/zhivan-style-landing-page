@@ -1,1 +1,1 @@
-export { ListComponent as List } from './List';
+export { ListComponent as List, withItem } from './List';
