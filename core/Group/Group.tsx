@@ -3,8 +3,6 @@ import { FlexComponent } from './Flex';
 import { GridComponent } from './Grid';
 import type { PropsWithFlex, PropsWithGrid } from './types';
 
-type Props = PropsWithFlex | PropsWithGrid;
-
 export class GroupComponent extends Component<Props> {
     public static defaultProps: Props = {
         type: 'flex',
@@ -34,3 +32,5 @@ export class GroupComponent extends Component<Props> {
         return <GridComponent {...props} />;
     }
 }
+
+type Props = PropsWithFlex | PropsWithGrid;

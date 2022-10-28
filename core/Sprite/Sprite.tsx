@@ -1,13 +1,5 @@
 import { Component } from 'utils';
 
-type Props = {
-    //* file-name
-    load: string;
-
-    //* path-name
-    name: string;
-};
-
 export class Sprite extends Component<Props> {
     public constructor(props: Props) {
         super(props);
@@ -33,3 +25,11 @@ export class Sprite extends Component<Props> {
         return `/zhivan-style-landing-page/assets/${this.props.load}-sprites.svg#${this.props.name}`;
     }
 }
+
+type Props = {
+    //* file-name
+    load: string;
+
+    //* path-name
+    name: string;
+};

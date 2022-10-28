@@ -1,16 +1,7 @@
 import { classnames, Component, Link, PropsWithAllTogether } from 'utils';
 import style from './link.module.scss';
 
-type Props = PropsWithAllTogether<{
-    href: string;
-    overlay: boolean;
-}>;
-
 export class LinkComponent extends Component<Props> {
-    public static defaultProps = {
-        overlay: false,
-    };
-
     public constructor(props: Props) {
         super(props);
     }
@@ -66,4 +57,13 @@ export class LinkComponent extends Component<Props> {
 
         return EXTERNAL_ATTRIBUTES;
     }
+
+    public static defaultProps = {
+        overlay: false,
+    };
 }
+
+type Props = PropsWithAllTogether<{
+    href: string;
+    overlay: boolean;
+}>;
